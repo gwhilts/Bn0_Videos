@@ -10,7 +10,11 @@ defmodule Pythagorean do
   [{3, 4, 5}, {6, 8, 10}]
   """
   def trips(limit) do
-    for(z <- 1..limit, y <- 1..z, x <- 1..y, x * x + y * y == z * z, do: {x, y, z})
+    for(
+      z <- 1..limit, y <- 1..z, x <- 1..y,
+      (x * x) + (y * y) == z * z,
+      do: {x, y, z}
+    )
     |> Enum.sort()
   end
 end
