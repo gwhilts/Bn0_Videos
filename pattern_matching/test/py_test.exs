@@ -1,6 +1,6 @@
-defmodule PythagoreanTest do
+defmodule PyTest do
   use ExUnit.Case
-  doctest Pythagorean
+  doctest Py
 
   describe "trips/1" do
     test "returns list of all the Pythagorean triples with integers below the given limit" do
@@ -15,13 +15,13 @@ defmodule PythagoreanTest do
         {15, 20, 25}
       ]
 
-      assert Pythagorean.trips(25) == expected
+      assert Py.trips(25) == expected
     end
 
     test "returns an empty list for values below which no triangles can be formed" do
-      assert Pythagorean.trips(1) == []
-      assert Pythagorean.trips(2) == []
-      assert Pythagorean.trips(3) == []
+      assert Py.trips(1) == []
+      assert Py.trips(2) == []
+      assert Py.trips(3) == []
     end
   end
 end
